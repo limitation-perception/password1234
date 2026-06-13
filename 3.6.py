@@ -9,7 +9,7 @@ def read_graph():
 
     for _ in range(E):
         edge = []
-        4edge.extend(input().split())
+        edge.extend(input().split())
         u = int(edge[0])
         v = int(edge[1])
         adj[u].append(v)
