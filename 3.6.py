@@ -5,13 +5,13 @@ def read_graph():
     V = int(first_line[0])
     E = int(first_line[1])
 
-    adj = [[] for _ in range(V)]
+    adj = [[] for _ in range(V + 1)]
 
     for _ in range(E):
         edge = []
-        edge.extend(input().split())
-        u = int(edge[0]) - 1
-        v = int(edge[1]) - 1
+        4edge.extend(input().split())
+        u = int(edge[0])
+        v = int(edge[1])
         adj[u].append(v)
         adj[v].append(u)
 
@@ -37,9 +37,9 @@ def bfs_color(start_node, adj, color):
 
 
 def check(V, adj):
-    color = [-1] * (V)
+    color = [-1] * (V + 1)
 
-    for i in range(1, V):
+    for i in range(1, V + 1):
         if color[i] == -1:
             if not bfs_color(i, adj, color):
                 return False, []
@@ -56,11 +56,11 @@ def print_result(is_bi, color, V):
     part1 = []
     part2 = []
 
-    for i in range(0, V):
+    for i in range(1, V + 1):
         if color[i] == 0:
-            part1.append(str(i + 1))
+            part1.append(str(i))
         elif color[i] == 1:
-            part2.append(str(i + 1))
+            part2.append(str(i))
 
     print(" ".join(part1))
     print(" ".join(part2))
