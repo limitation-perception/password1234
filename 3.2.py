@@ -22,14 +22,12 @@ while q:
             parent[nxt] = curr
             q.append(nxt)
 
-if not found:
-    print("UNREACHABLE")
-else:
-    path = []
-    curr = t
-    while curr is not None:
-        path.append(curr)
-        curr = parent[curr]
-    path.reverse()
-    print(len(path))
-    print(" ".join(map(str, path)))
+
+path = []
+curr = t
+while curr is not None:
+    path.append(curr)
+    curr = parent[curr]
+path.reverse()
+print(len(path))
+print(" ".join(map(str, path)))
